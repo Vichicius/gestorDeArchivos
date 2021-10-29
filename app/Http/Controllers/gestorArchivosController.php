@@ -36,6 +36,17 @@ class gestorArchivosController extends Controller
     }
 
     function descargar(Request $request){
+
+        
+
+
+
+
+
+
+
+
+
         $output = '<div class="row">ESTO ES UNA PRUEBA</div>';
     	return view('listado',["outputLista"=>$output]);
     }
