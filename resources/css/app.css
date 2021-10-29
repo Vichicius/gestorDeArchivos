@@ -1,0 +1,33 @@
+body{
+        background-color: lavender;
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+    .boton{
+        background-color: purple;
+        color: white;
+        text-decoration: none;
+        border-radius: 7px;
+        padding: 15px;
+        font-family: sans-serif;
+        margin-bottom: 100px;
+    }
+
+    .boton:hover{
+        color: black;
+        background-color: lavender;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    p{
+        margin-bottom: 40px;
+    }
+
+    table{
+        margin-right: auto;
+        margin-left: auto;
+    }
