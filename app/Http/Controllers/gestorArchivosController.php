@@ -27,9 +27,10 @@ class gestorArchivosController extends Controller
         var_dump($request->input("nombreInput"));
         var_dump($request->file("archivoInput"));
         
-        $request->file('archivoInput')->store('archivos');
-
-        return $path;
+        if ($request->file('archivoInput')){
+            print("entra");
+            $request->file('archivoInput')->store('archivos');
+        }
 
 
     	return view('subir',["output"=>$output]);
