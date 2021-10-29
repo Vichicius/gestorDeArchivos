@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Example</title>
+  <title>Lista de archivos</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
         }
 
       table {
-            background: white; /* triada colores E3B186 FFCEA6*/
+            background: white;
             font: 2rem 'Calibri', sans-serif;
             margin: auto;
             border-collapse:collapse;
@@ -60,7 +60,7 @@
     </table>
 
     <br><br>
-    <a href="inicio"><input type="button" value="Volver al inicio"></a>
+    <a href="inicio"><input type="button" class="btn btn-primary" value="Volver al inicio"></a>
 </div>   
 
 </body>
