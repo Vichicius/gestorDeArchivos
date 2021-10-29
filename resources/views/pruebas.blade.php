@@ -17,15 +17,10 @@
 
 
 <div class="container">
-    <h1>Archivos para descargar</h1>
-
+<h1>Archivos para descargar</h1>
     <div class="col">
-        {{ print($outputLista);  }}
         <div class="row">a</div>
     </div>
-
-    <br><br>
-    <a href="inicio"><input type="button" value="Volver al inicio"></a>
 </div>   
 
 </body>

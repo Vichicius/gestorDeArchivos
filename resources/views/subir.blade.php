@@ -15,7 +15,7 @@
 </form>
 <br>
 {{ $output }}
-<br>
+<br><br>
 <a href="inicio"><input type="button" value="Volver al inicio"></a>
 
 </body>

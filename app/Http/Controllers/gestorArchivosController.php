@@ -36,8 +36,7 @@ class gestorArchivosController extends Controller
     }
 
     function descargar(Request $request){
-    	print("esto es un test");
-
-    	return view('listado');
+        $output = '<div class="row">ESTO ES UNA PRUEBA</div>';
+    	return view('listado',["outputLista"=>$output]);
     }
 }

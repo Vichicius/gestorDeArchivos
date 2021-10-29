@@ -20,3 +20,8 @@ Route::match(['get','post'],'/subir', [gestorArchivosController::class,'subir'])
 Route::get('/descargar', [gestorArchivosController::class,'descargar'])->name("descargar");
 
 Route::redirect('/', 'inicio');
+
+
+Route::get('pruebas', function(){
+    return view('pruebas');
+    });
