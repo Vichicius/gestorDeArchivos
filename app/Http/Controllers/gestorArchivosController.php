@@ -12,29 +12,29 @@ class gestorArchivosController extends Controller
 
     	return view('inicio');
     }
+
     function subir(Request $request){
-        if ($request->input("archivoInput")) {
+
+        if ($request->file("archivoInput")) {
+            
             if ($request->input("nombreInput")) {
                 $nombreArchivo = $request->input("nombreInput");
             }else{
-                $nombreArchivo = explode(".",$request->input("archivoInput"))[0];
+                $nombreArchivo = explode(".",$request->file("archivoInput")->getClientOriginalName())[0];
             }
             
-            $output = $nombreArchivo." ---> ".$request->input("archivoInput");
+            $extension = explode(".",$request->file("archivoInput")->getClientOriginalName())[1];
+            $request->file('archivoInput')->storeAs('archivos', $nombreArchivo.".".$extension);
+        
+            $output = "Nombre: ".$nombreArchivo." ---> Archivo: ".$request->file("archivoInput")->getClientOriginalName();
+
         }else{
             $output = "";
         }
-        var_dump($request->input("nombreInput"));
-        var_dump($request->file("archivoInput"));
-        
-        if ($request->file('archivoInput')){
-            print("entra");
-            $request->file('archivoInput')->store('archivos');
-        }
-
 
     	return view('subir',["output"=>$output]);
     }
+
     function descargar(Request $request){
     	print("esto es un test");
 
