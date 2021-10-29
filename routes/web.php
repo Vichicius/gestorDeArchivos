@@ -23,5 +23,18 @@ Route::redirect('/', 'inicio');
 
 
 Route::get('pruebas', function(){
+    
+    $archivos=["xokas.jpg","pibe dale.webp","archivopython.py"];
+
+    foreach($archivos as $archivo){
+        $mime = Storage::disk('local')->mimeType("\archivos\\".$archivo);
+
+        var_dump($mime);
+        if(explode("/",$mime)[0]=="image"){
+            print(" ES UNA IMAGEN<br>");
+        }
+    }
+    
+    
     return view('pruebas');
     });

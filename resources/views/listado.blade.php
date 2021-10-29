@@ -43,21 +43,21 @@
     <h1>Archivos para descargar</h1>
 
     <table class="table">
+        
+        @foreach($arrayArchivos as $archivo)
         <tr>
-            <td><a download="" href="..\storage\app\archivos\xokas.jpg">xokas.jpg</a></td>
+            <td><a download="" href="..\storage\app\archivos\{{$archivo}}">{{$archivo}}</a></td>
             <td>
-                <a download="" href="..\storage\app\archivos\xokas.jpg">
-                    <img src="..\storage\app\archivos\xokas.jpg">
+                @if(explode("/", Storage::disk('local')->mimeType("\archivos\\".$archivo))[0] == "image")
+                <a download="" href="..\storage\app\archivos\{{$archivo}}">
+                    <img src="..\storage\app\archivos\{{$archivo}}">
                 </a>
+                @endif
             </td>
         </tr>
-        <tr>
-            <td><a download="" href="..\storage\app\archivos\archivopython.py">archivopython.py</a></td>
-            <td>
-                 
-            </td>
+        @endforeach
+
     </table>
-    
 
     <br><br>
     <a href="inicio"><input type="button" value="Volver al inicio"></a>

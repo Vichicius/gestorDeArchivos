@@ -1,16 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class gestorArchivosController extends Controller
 {
     //
     function inicio(){
-    	print("esto es un test");
-
-    	return view('inicio');
+        return view('inicio');
     }
 
     function subir(Request $request){
@@ -36,18 +34,14 @@ class gestorArchivosController extends Controller
     }
 
     function descargar(Request $request){
-
         
-
-
-
-
-
-
-
-
-
-        $output = '<div class="row">ESTO ES UNA PRUEBA</div>';
-    	return view('listado',["outputLista"=>$output]);
+        $directory = "archivos";
+        $arrayFicherosConCarpeta = Storage::files($directory);
+        $output = [];
+        foreach ($arrayFicherosConCarpeta as $nombreFicherosConCarpeta){
+            array_push($output, explode("/",$nombreFicherosConCarpeta)[1]);
+        }
+        
+    	return view('listado',["arrayArchivos"=>$output]);
     }
 }
